@@ -3,9 +3,14 @@ import '../css/demo1.css'
 import { gsap } from 'gsap'
 
 /**
- * GSAP
+ * Dom elements
  */
+const menuOpen = document.querySelector('.menu-open')
+const menuClose = document.querySelector('.menu-close')
 
+/**
+ * Timeline
+ */
 const tl = gsap.timeline()
 tl.pause()
 
@@ -74,13 +79,7 @@ tl.to(
 tl.reverse()
 
 /**
- * Dom elements
- */
-const menuOpen = document.querySelector('.menu-open')
-const menuClose = document.querySelector('.menu-close')
-
-/**
- * Click on menu-open to open menu
+ * Events
  */
 menuOpen.addEventListener('click', () => {
   tl.reversed(!tl.reversed())
