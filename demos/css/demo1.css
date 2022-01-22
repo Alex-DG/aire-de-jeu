@@ -48,7 +48,7 @@ body {
 .menu-right {
   right: -50%;
   background: #000;
-  background: cornflowerblue;
+  background: #ffb658;
 }
 
 .menu-link a {
@@ -120,6 +120,9 @@ body {
   height: 140px;
   border-radius: 100%;
   border: 10px solid #000;
+
+  background: #fff;
+  padding: 1.5em 1em;
 }
 
 img {
@@ -131,11 +134,20 @@ img {
   z-index: 1;
   top: 0;
   right: 0;
-  padding: 2rem;
+  padding: 1.5rem;
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
   color: #000;
+
+  transition: all 250ms ease-out;
+
+  border: 2px solid black;
+  margin: 1em;
+}
+
+.menu-open:hover {
+  border-color: transparent;
 }
 
 @media (max-width: 900px) {
