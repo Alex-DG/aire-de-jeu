@@ -48,7 +48,7 @@ body {
 .menu-right {
   right: -50%;
   background: #000;
-  background: #ffb658;
+  background: cornflowerblue;
 }
 
 .menu-link a {
@@ -120,9 +120,13 @@ body {
   height: 140px;
   border-radius: 100%;
   border: 10px solid #000;
+  background-color: #fff;
 
-  background: #fff;
-  padding: 1.5em 1em;
+  padding: 1.25em;
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 img {
@@ -134,20 +138,11 @@ img {
   z-index: 1;
   top: 0;
   right: 0;
-  padding: 1.5rem;
+  padding: 2rem;
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
   color: #000;
-
-  transition: all 250ms ease-out;
-
-  border: 2px solid black;
-  margin: 1em;
-}
-
-.menu-open:hover {
-  border-color: transparent;
 }
 
 @media (max-width: 900px) {
@@ -166,6 +161,15 @@ img {
     left: 80%;
     transform: translate(-50%, -50%);
     margin: 40px;
+  }
+
+  .menu-close-img {
+    transform: scale(0.6);
+    border-radius: 100%;
+    border: 10px solid #000;
+    background-color: #fff;
+    padding: 0;
+    /* padding: 1.5em 1em; */
   }
 
   .hr {
