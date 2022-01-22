@@ -2,7 +2,7 @@
 
 CSS Playground ~ Learning + 3xperiments
 
-[> vite! <](https://creative-development.vercel.app/)
+[aire-de-jeu](https://creative-development.vercel.app/)
 
 ## Setup
 
