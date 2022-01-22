@@ -83,10 +83,8 @@ const menuClose = document.querySelector('.menu-close')
  * Click on menu-open to open menu
  */
 menuOpen.addEventListener('click', () => {
-  console.log('open')
   tl.reversed(!tl.reversed())
 })
 menuClose.addEventListener('click', () => {
-  console.log('close')
   tl.reversed(!tl.reversed())
 })

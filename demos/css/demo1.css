@@ -33,7 +33,6 @@ body {
   position: fixed;
   width: 50%;
   height: 100vh;
-  background: #000;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -43,10 +42,13 @@ body {
 
 .menu-left {
   left: -50%;
+  background: #000;
 }
 
 .menu-right {
   right: -50%;
+  background: #000;
+  background: cornflowerblue;
 }
 
 .menu-link a {
@@ -55,11 +57,17 @@ body {
   font-size: 100px;
 }
 
+.menu-link a {
+  transition: font-family 1.5s ease-out;
+}
+.menu-link a:hover {
+  font-style: italic;
+}
+
 .menu-link:first-child a::before {
   display: block;
   position: relative;
   content: '';
-  background-image: url('brush-stroke.png');
   background-size: 100%;
   background-repeat: no-repeat;
   top: 80px;
@@ -80,6 +88,17 @@ body {
 .contact .info {
   font-family: Helvetica, sans-serif;
   font-weight: lighter;
+}
+
+.contact .info a {
+  text-decoration: none;
+  color: #fff;
+  transition: 300ms;
+  border-bottom: 1px solid transparent;
+}
+
+.contact .info a:hover {
+  border-color: #fff;
 }
 
 .mail {
@@ -115,6 +134,7 @@ img {
   padding: 2rem;
   cursor: pointer;
   font-size: 20px;
+  font-weight: bold;
   color: #000;
 }
 
