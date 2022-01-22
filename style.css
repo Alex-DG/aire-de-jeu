@@ -1,13 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #ffffff;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 2em;
+
+  height: 100vh;
+
+  padding: 4em 1em;
+
+  background-color: rgb(27, 27, 31);
+}
+
+#app h1 {
+  letter-spacing: 0.5rem;
+  transition: 600ms;
 }
 
 .menu {
@@ -16,5 +34,17 @@
 }
 
 .menu > :nth-child(n) {
-  margin-top: 0.5em;
+  margin-top: 1em;
+}
+
+.menu a {
+  letter-spacing: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 400ms;
+  border-bottom: 4px solid transparent;
+}
+
+.menu a:hover {
+  border-color: #fff;
 }
