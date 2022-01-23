@@ -15,6 +15,7 @@ class Experience {
   scene
   sneaker
   controls
+  loadingManager = new THREE.LoadingManager()
 
   // Time
   clock
@@ -141,7 +142,14 @@ class Experience {
   // }
 
   setSneaker() {
-    const gltfLoader = new GLTFLoader()
+    const gltfLoader = new GLTFLoader(loadingManager)
+
+    console.log('Loading sneaker: starting...')
+
+    loadingManager.onProgress = (_, loaded, total) => {
+      const progress = (loaded / total) * 100
+      console.log('progress: ', { progress })
+    }
 
     gltfLoader.load(sneakerSrc, (gltf) => {
       this.sneaker = gltf.scene
@@ -155,6 +163,7 @@ class Experience {
       this.sneaker.position.sub(center)
 
       this.scene.add(this.sneaker)
+      console.log('Loading sneaker: done!')
     })
   }
 
