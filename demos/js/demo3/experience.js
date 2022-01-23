@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { gsap } from 'gsap'
 
 import sneakerSrc from '../../models/sneaker/sneaker.glb'
 
@@ -20,6 +21,9 @@ class Experience {
   clock
   deltaTime = 0
   lastElapsedTime = 0
+
+  // State/Flag
+  isloaded = false
 
   init() {
     this.setCanvas()
@@ -141,17 +145,22 @@ class Experience {
   // }
 
   setSneaker() {
-    const progressText = document.getElementById('loading-progress')
     const loadingManager = new THREE.LoadingManager()
+    const progressText = document.getElementById('loading-progress')
     const gltfLoader = new GLTFLoader(loadingManager)
 
+    // Handel loading progress
     loadingManager.onProgress = (_, loaded, total) => {
       const progress = (loaded / total) * 100
       progressText.innerHTML = `${Number(progress).toFixed(0)}%`
-      if (progress === 100) progressText.style.display = 'none'
+      if (progress === 100) {
+        this.isloaded = true
+        progressText.style.display = 'none'
+      }
       console.log('progress: ', { progress })
     }
 
+    // Load model
     gltfLoader.load(sneakerSrc, (gltf) => {
       this.sneaker = gltf.scene
 
