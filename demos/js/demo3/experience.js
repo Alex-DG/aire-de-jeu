@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-import sneakerSrc from '../../models/sneaker/sneaker2.glb'
+import sneakerSrc from '../../models/sneaker/sneaker.glb'
 
 class Experience {
   // Dom
@@ -15,7 +15,6 @@ class Experience {
   scene
   sneaker
   controls
-  loadingManager = new THREE.LoadingManager()
 
   // Time
   clock
@@ -142,19 +141,21 @@ class Experience {
   // }
 
   setSneaker() {
+    const progressText = document.getElementById('loading-progress')
+    const loadingManager = new THREE.LoadingManager()
     const gltfLoader = new GLTFLoader(loadingManager)
-
-    console.log('Loading sneaker: starting...')
 
     loadingManager.onProgress = (_, loaded, total) => {
       const progress = (loaded / total) * 100
+      progressText.innerHTML = `${Number(progress).toFixed(0)}%`
+      if (progress === 100) progressText.style.display = 'none'
       console.log('progress: ', { progress })
     }
 
     gltfLoader.load(sneakerSrc, (gltf) => {
       this.sneaker = gltf.scene
 
-      this.sneaker.scale.multiplyScalar(0.5)
+      this.sneaker.scale.multiplyScalar(0.17)
 
       // Center sneaker in viewport
       const box = new THREE.Box3().setFromObject(this.sneaker)

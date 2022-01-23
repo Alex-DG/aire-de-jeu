@@ -303,6 +303,15 @@ section.hero {
   height: 100%;
 }
 
+#loading-progress {
+  position: fixed;
+  top: 45%;
+  right: 45%;
+  z-index: 3;
+  font-weight: bold;
+  color: #fff;
+}
+
 #webgl {
   position: fixed;
   top: 0;
