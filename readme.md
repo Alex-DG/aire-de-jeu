@@ -4,11 +4,11 @@ CSS Playground ~ Learning + 3xperiments
 
 - [aire-de-jeu](https://creative-development.vercel.app/)
 
-- Learning materials based on:
+- Learning material based on:
   - [Codegrid](https://www.youtube.com/channel/UC7pVho4O31FyfQsZdXWejEw)
   - [DesignCourse](https://www.youtube.com/channel/UCVyRiMvfUNMA1UPlDPzG5Ow)
   - [Sketchfab](https://sketchfab.com/)
-  - with personal experiments with PixiJS, GSAP, THREE.js and Blender tweaks sometimes!
+  - Combined with personal experiments using PixiJS, GSAP, THREE.js and Blender tweaks sometimes!
 
 ## Setup
 
