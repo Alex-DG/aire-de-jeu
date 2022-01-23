@@ -47,6 +47,4 @@ close.addEventListener('click', () => {
   nav.classList.remove('open-nav')
 })
 
-window.addEventListener('load', () => {
-  Experience.init()
-})
+Experience.init()
