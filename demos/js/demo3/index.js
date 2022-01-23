@@ -5,9 +5,11 @@ import { gsap } from 'gsap'
 /**
  * Dom elements
  */
+
+const image1 = document.getElementById('image-1')
+const image2 = document.getElementById('image-2')
+const image3 = document.getElementById('image-3')
 const closeBtn = document.querySelector('.close-btn')
-const viewer = document.querySelector('.viewer')
-const images = document.querySelectorAll('img')
 const menu = document.querySelector('.menu')
 const close = document.querySelector('.close')
 const nav = document.querySelector('nav')
@@ -18,26 +20,24 @@ const nav = document.querySelector('nav')
 closeBtn.addEventListener('click', () => {
   gsap.to(['#webgl', '.close-btn'], {
     opacity: 0,
+    duration: 0.25,
     display: 'none',
-    duration: 0.5,
     ease: 'power3.out',
   })
 })
 
-// link.addEventListener('mouseenter', venueHover)
-// link.addEventListener('mouseleave', venueHover)
-// link.addEventListener('mousemove', moveVenueImage)
-
-images.forEach((imgage) => {
-  imgage.addEventListener('click', () => {
-    gsap.to(['#webgl', '.close-btn'], {
-      opacity: 1,
-      display: 'block',
-      duration: 1,
-      ease: 'power3.out',
-    })
+const handleImageCallback = () => {
+  gsap.to(['#webgl', '.close-btn'], {
+    opacity: 1,
+    duration: 1,
+    display: 'block',
+    ease: 'power3.out',
   })
-})
+}
+
+image1.addEventListener('click', handleImageCallback)
+image2.addEventListener('click', handleImageCallback)
+image3.addEventListener('click', handleImageCallback)
 
 menu.addEventListener('click', () => {
   nav.classList.add('open-nav')

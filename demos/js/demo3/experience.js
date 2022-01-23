@@ -84,8 +84,6 @@ class Experience {
 
   setResize() {
     window.addEventListener('resize', () => {
-      console.log('resize', { c: this.canvas })
-
       // Update sizes
       this.sizes.width = window.innerWidth
       this.sizes.height = window.innerHeight
@@ -118,85 +116,78 @@ class Experience {
     this.clock = new THREE.Clock()
   }
 
-  setSneakerPosition() {
-    const { sizes } = this
+  // setSneakerPosition() {
+  //   const { sizes } = this
 
-    // Scale sneaker to canvas sizes
-    const camDistance = this.camera.position.distanceTo(this.sneaker.position)
-    const fov = (this.camera.fov * Math.PI) / 180 // convert vertical fov to radians
-    const h = 2 * Math.tan(fov / 2) * camDistance // visible height
-    const w = h * (sizes.width / sizes.height)
-    this.sneaker.scale.set(w, h, w)
+  //   // Scale sneaker to canvas sizes
+  //   const camDistance = this.camera.position.distanceTo(this.sneaker.position)
+  //   const fov = (this.camera.fov * Math.PI) / 180 // convert vertical fov to radians
+  //   const h = 2 * Math.tan(fov / 2) * camDistance // visible height
+  //   const w = h * (sizes.width / sizes.height)
+  //   this.sneaker.scale.set(w, h, w)
 
-    const box = new THREE.Box3()
-    box.expandByObject(this.sneaker)
+  //   const box = new THREE.Box3()
+  //   box.expandByObject(this.sneaker)
 
-    const size = box.getSize(new THREE.Vector3())
-    const maxSize = Math.max(size.x, size.y, size.z)
-    const fitHeightDistance = maxSize / (2 * Math.atan((Math.PI * fov) / 360))
-    const fitWidthDistance = fitHeightDistance / this.camera.aspect
-    const distance = 1.2 * Math.max(fitHeightDistance, fitWidthDistance)
+  //   const size = box.getSize(new THREE.Vector3())
+  //   const maxSize = Math.max(size.x, size.y, size.z)
+  //   const fitHeightDistance = maxSize / (2 * Math.atan((Math.PI * fov) / 360))
+  //   const fitWidthDistance = fitHeightDistance / this.camera.aspect
+  //   const distance = 1.2 * Math.max(fitHeightDistance, fitWidthDistance)
 
-    console.log({ fitHeightDistance, fitWidthDistance, distance })
-    this.sneaker.position.z = -distance / 100 - 10
-    this.sneaker.position.x += 1.5
-  }
+  //   console.log({ fitHeightDistance, fitWidthDistance, distance })
+  //   this.sneaker.position.z = -distance / 100 - 10
+  //   this.sneaker.position.x += 1.5
+  // }
 
   setSneaker() {
     const gltfLoader = new GLTFLoader()
 
-    gltfLoader.loadAsync(sneakerSrc).then((gltf) => {
-      //   const gltf = await loadSneaker()
-      console.log(gltf)
+    gltfLoader.load(sneakerSrc, (gltf) => {
       this.sneaker = gltf.scene
 
       this.sneaker.scale.multiplyScalar(0.5)
-      //   this.sneaker.position.x = 1.5
 
-      //   const group = new THREE.Group()
-      //   group.add(this.sneaker)
-      // Center Megan into the viewport
+      // Center sneaker in viewport
       const box = new THREE.Box3().setFromObject(this.sneaker)
       const center = new THREE.Vector3()
       box.getCenter(center)
       this.sneaker.position.sub(center)
 
       this.scene.add(this.sneaker)
-      //   this.setSneakerPosition()
-      //   this.controlsUpdate()
     })
   }
 
-  controlsUpdate(fitRatio = 1) {
-    const { controls, camera } = this
-    const box = new THREE.Box3()
+  // controlsUpdate(fitRatio = 1) {
+  //   const { controls, camera } = this
+  //   const box = new THREE.Box3()
 
-    const size = box.getSize(new THREE.Vector3())
-    const center = box.getCenter(new THREE.Vector3())
+  //   const size = box.getSize(new THREE.Vector3())
+  //   const center = box.getCenter(new THREE.Vector3())
 
-    const maxSize = Math.max(size.x, size.y, size.z)
-    const fitHeightDistance =
-      maxSize / (2 * Math.atan((Math.PI * camera.fov) / 360))
-    const fitWidthDistance = fitHeightDistance / camera.aspect
-    const distance = fitRatio * Math.max(fitHeightDistance, fitWidthDistance)
+  //   const maxSize = Math.max(size.x, size.y, size.z)
+  //   const fitHeightDistance =
+  //     maxSize / (2 * Math.atan((Math.PI * camera.fov) / 360))
+  //   const fitWidthDistance = fitHeightDistance / camera.aspect
+  //   const distance = fitRatio * Math.max(fitHeightDistance, fitWidthDistance)
 
-    const direction = controls.target
-      .clone()
-      .sub(camera.position)
-      .normalize()
-      .multiplyScalar(distance)
+  //   const direction = controls.target
+  //     .clone()
+  //     .sub(camera.position)
+  //     .normalize()
+  //     .multiplyScalar(distance)
 
-    controls.maxDistance = distance * 10
-    controls.target.copy(center)
+  //   controls.maxDistance = distance * 10
+  //   controls.target.copy(center)
 
-    camera.near = distance / 100
-    camera.far = distance * 100
-    camera.updateProjectionMatrix()
+  //   camera.near = distance / 100
+  //   camera.far = distance * 100
+  //   camera.updateProjectionMatrix()
 
-    camera.position.copy(controls.target).sub(direction)
+  //   camera.position.copy(controls.target).sub(direction)
 
-    controls.update()
-  }
+  //   controls.update()
+  // }
 
   update() {
     const { clock, scene, camera, renderer, controls } = this
@@ -207,7 +198,6 @@ class Experience {
 
     // Update controls
     controls.update()
-    // this.controlsUpdate()
 
     if (this.sneaker) {
       this.sneaker.rotation.y += this.deltaTime * 0.3

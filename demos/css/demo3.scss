@@ -278,7 +278,7 @@ section.hero {
 
 /* Close Button */
 .close-btn {
-  position: absolute;
+  position: fixed;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   transition: 300ms;
@@ -294,7 +294,7 @@ section.hero {
   width: 4em;
   height: 4em;
   opacity: 0;
-  z-index: 3;
+  z-index: 2;
   display: none;
 }
 
@@ -312,6 +312,6 @@ section.hero {
   opacity: 0;
   display: none;
 
-  z-index: 2;
+  z-index: 1;
   background: linear-gradient(45deg, dimgray, transparent);
 }
