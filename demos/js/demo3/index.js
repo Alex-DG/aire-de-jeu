@@ -19,11 +19,8 @@ closeBtn.addEventListener('click', () => {
   gsap.to(['#webgl', '.close-btn'], {
     opacity: 0,
     display: 'none',
-    // duration: 0.5,
-    // ease: 'power3.out',
-    // onComplete: () => {
-    //   viewer.style.zIndex = '-1'
-    // },
+    duration: 0.5,
+    ease: 'power3.out',
   })
 })
 
@@ -36,9 +33,8 @@ images.forEach((imgage) => {
     gsap.to(['#webgl', '.close-btn'], {
       opacity: 1,
       display: 'block',
-      // display: 'flex',
-      // duration: 0.5,
-      // ease: 'power3.out',
+      duration: 1,
+      ease: 'power3.out',
     })
   })
 })
