@@ -18,7 +18,7 @@ const nav = document.querySelector('nav')
  * Events
  */
 closeBtn.addEventListener('click', () => {
-  gsap.to(['#webgl', '.close-btn'], {
+  gsap.to(['#webgl', '.close-btn', '#loading-progress'], {
     opacity: 0,
     duration: 0.25,
     display: 'none',
@@ -27,7 +27,7 @@ closeBtn.addEventListener('click', () => {
 })
 
 const handleImageCallback = () => {
-  gsap.to(['#webgl', '.close-btn'], {
+  gsap.to(['#webgl', '.close-btn', ' #loading-progress'], {
     opacity: 1,
     duration: 1,
     display: 'block',
