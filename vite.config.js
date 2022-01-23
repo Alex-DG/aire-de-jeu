@@ -13,4 +13,5 @@ module.exports = defineConfig({
       },
     },
   },
+  assetsInclude: ['**/*.glb'],
 })

@@ -140,8 +140,8 @@ images.forEach((img, _) => {
 
   image.filters = [displacementFilter]
 
-  displacementFilter.scale.x = 15
-  displacementFilter.scale.y = 25
+  displacementFilter.scale.x = 30
+  displacementFilter.scale.y = 60
 
   allCanvas.push(canvas)
 
