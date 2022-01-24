@@ -20,7 +20,7 @@ const nav = document.querySelector('nav')
 const domTargets = () => {
   return Experience.isloaded
     ? ['#webgl', '.close-btn']
-    : ['#webgl', '.close-btn', '#loading-progress']
+    : ['#webgl', '.close-btn', '.spinner']
 }
 
 closeBtn.addEventListener('click', () => {

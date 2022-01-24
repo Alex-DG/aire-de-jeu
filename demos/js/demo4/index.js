@@ -5,7 +5,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
 
-import sneakerSrc from '../../models/sneaker/sneaker.glb'
+import sneakerSrc from '../../models/sneaker/sneaker2.glb'
 
 const init = () => {
   const loadingManager = new THREE.LoadingManager()
@@ -16,7 +16,9 @@ const init = () => {
     console.log({ gltf })
     sneaker = gltf.scene
 
+    const pointLight = new THREE.PointLight(0xffffff, 2)
     sneaker.scale.multiplyScalar(0.17)
+    sneaker.add(pointLight)
 
     // Center sneaker in viewport
     const box = new THREE.Box3().setFromObject(sneaker)

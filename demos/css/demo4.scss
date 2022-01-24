@@ -25,7 +25,7 @@ a {
   top: 0;
   left: 0;
   // background: url('https://assets.codepen.io/2621168/shoe.jpg');
-  background: url('../img/demo4/nike_pegasus_33.jpg');
+  background: url('../img/demo4/converse.png');
   background-size: cover;
   background-position-x: 10%;
   background-position-y: 20%;
@@ -104,14 +104,14 @@ section.hero {
   opacity: 0;
 
   .down-arrow {
-    stroke: rgb(0, 0, 255);
+    stroke: #000;
     position: absolute;
     bottom: 8em;
     width: 1em;
     animation: moveArrow 1s alternate-reverse infinite;
 
     path {
-      fill: rgb(0, 0, 255);
+      fill: #000;
     }
   }
 }
@@ -165,7 +165,7 @@ section.hero {
       margin: 0;
 
       a {
-        color: rgb(0, 0, 255);
+        color: rgba(255, 22, 6, 0.824);
         padding: 0.5em 1.5em;
         font-size: 0.9rem;
 
@@ -188,7 +188,7 @@ section.hero {
     color: black;
 
     span {
-      color: rgb(0, 0, 255);
+      color: rgba(255, 22, 6, 0.824);
     }
   }
 

@@ -78,7 +78,7 @@ class Experience {
 
   setLight() {
     const color = 0xffffff
-    const intensity = 1
+    const intensity = 1.5
     const directionalLight = new THREE.DirectionalLight(color, intensity)
 
     directionalLight.position.set(-1, 2, 4)
@@ -145,18 +145,19 @@ class Experience {
 
   setSneaker() {
     const loadingManager = new THREE.LoadingManager()
-    const progressText = document.getElementById('loading-progress')
+    const spinner = document.querySelector('.spinner')
     const gltfLoader = new GLTFLoader(loadingManager)
 
     // Handel loading progress
     loadingManager.onProgress = (_, loaded, total) => {
       const progress = (loaded / total) * 100
-      progressText.innerHTML = `${Number(progress).toFixed(0)}%`
+
       if (progress === 100) {
         this.isloaded = true
-        progressText.style.display = 'none'
+        spinner.style.display = 'none'
       }
-      console.log('progress: ', { progress })
+
+      console.log('progress: ', progress)
     }
 
     // Load model
