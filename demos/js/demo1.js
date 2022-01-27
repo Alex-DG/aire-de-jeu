@@ -1,4 +1,4 @@
-import '../css/demo1.css'
+import '../styles/demo1.css'
 
 import { gsap } from 'gsap'
 
