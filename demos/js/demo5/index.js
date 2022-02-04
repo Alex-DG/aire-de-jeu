@@ -1,4 +1,4 @@
-import '../../css/demo5.scss'
+import '../../styles/demo5.scss'
 
 import * as PIXI from 'pixi.js'
 
