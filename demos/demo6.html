@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mask effect</title>
+  </head>
+  <body>
+    <header>
+      <button class="menu-button" data-btn="menu">
+        <span>Menu</span>
+        <span>Close</span>
+      </button>
+      <nav class="menu" data-menu>
+        <ul>
+          <li>
+            <a href="">About me</a>
+          </li>
+          <li>
+            <a href="">Projects</a>
+          </li>
+          <li>
+            <a href="">Writing</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="wrapper">
+      <div class="hero">
+        <h1 class="hero__heading hero__heading--primary">
+          <span class="word">Welcome</span>
+          <span class="word">to</span>
+          <span class="word">my</span>
+          <span class="word">website</span>
+        </h1>
+      </div>
+
+      <div class="hero hero--secondary" aria-hidden="true" data-hero>
+        <p class="hero__heading">
+          <span class="hero__heading--secondary">Bienvenue sur mon site</span>
+        </p>
+      </div>
+    </div>
+
+    <script type="module" src="./js/demo6/index.js"></script>
+  </body>
+</html>

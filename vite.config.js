@@ -12,6 +12,7 @@ module.exports = defineConfig({
         demo3: resolve(__dirname, 'demos/demo3.html'),
         demo4: resolve(__dirname, 'demos/demo4.html'),
         demo5: resolve(__dirname, 'demos/demo5.html'),
+        demo6: resolve(__dirname, 'demos/demo6.html'),
       },
     },
   },

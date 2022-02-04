@@ -13,7 +13,6 @@ const init = () => {
 
   let sneaker = null
   gltfLoader.load(sneakerSrc, (gltf) => {
-    console.log({ gltf })
     sneaker = gltf.scene
 
     const pointLight = new THREE.PointLight(0xffffff, 2)
@@ -62,7 +61,8 @@ const init = () => {
     scene.add(camera)
 
     const controls = new TrackballControls(camera, elem)
-    controls.noZoom = false
+
+    controls.noZoom = true
     controls.noPan = false
 
     {
