@@ -1,4 +1,4 @@
-import '../../css/demo3.scss'
+import '../../styles/demo3.scss'
 import Experience from './experience'
 import { gsap } from 'gsap'
 

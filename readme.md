@@ -2,10 +2,7 @@
 
 CSS Playground ~ Learning + 3xperiments
 
-- [aire-de-jeu](https://creative-development.vercel.app/)
-
-- Resources:
-
+- Learning material based on:
   - [Codegrid](https://www.youtube.com/channel/UC7pVho4O31FyfQsZdXWejEw)
   - [DesignCourse](https://www.youtube.com/channel/UCVyRiMvfUNMA1UPlDPzG5Ow)
   - [Sketchfab](https://sketchfab.com/)

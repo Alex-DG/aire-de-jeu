@@ -1,4 +1,4 @@
-import '../../css/demo4.scss'
+import '../../styles/demo4.scss'
 
 import * as THREE from 'three'
 
