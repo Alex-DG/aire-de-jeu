@@ -4,16 +4,16 @@ import { gsap } from 'gsap'
 
 import * as PIXI from 'pixi.js'
 
-import imgone from '../img/demo2/image-one.jpg'
-import imgtwo from '../img/demo2/image-two.jpg'
-import imgthree from '../img/demo2/image-three.jpg'
-import imgfour from '../img/demo2/image-four.jpg'
-import imgfive from '../img/demo2/image-five.jpg'
-import imgsix from '../img/demo2/image-six.jpg'
-import imgseven from '../img/demo2/image-seven.jpg'
-import imgheight from '../img/demo2/image-height.jpg'
+import imgone from '../../img/demo2/image-one.jpg'
+import imgtwo from '../../img/demo2/image-two.jpg'
+import imgthree from '../../img/demo2/image-three.jpg'
+import imgfour from '../../img/demo2/image-four.jpg'
+import imgfive from '../../img/demo2/image-five.jpg'
+import imgsix from '../../img/demo2/image-six.jpg'
+import imgseven from '../../img/demo2/image-seven.jpg'
+import imgheight from '../../img/demo2/image-height.jpg'
 
-import displacementMap from '../img/demo2/displacement_map_repeat.jpg'
+import displacementMap from '../../img/demo2/displacement_map_repeat.jpg'
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Data
