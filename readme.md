@@ -9,8 +9,6 @@ CSS Playground ~ Learning + 3xperiments
   - [Codrops](https://tympanus.net/codrops/)
   - Combined with personal experiments using PixiJS, GSAP, THREE.js and Blender tweaks sometimes!
 
-- Note: / 04 / 05 / sorry models not optimised (=big) just used those ones to test and have some content to show (better in local :x)
-
 ## Setup
 
 ```bash
